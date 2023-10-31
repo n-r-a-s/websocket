@@ -11,7 +11,8 @@ This is an adaption from the Oracle tutorial with the following modifications:
 - Edited for deployment on Apache Tomcat instead of Glassfish
 - Generalized message model
 - Message propagation for specific session
-- 
+
+Reference:
 Java EE 7: Building Web Applications with WebSocket, JavaScript and HTML5 
 https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/HomeWebsocket/WebsocketHome.html
 
