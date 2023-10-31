@@ -21,4 +21,7 @@ The source code includes
 - Server side implementation for the WebSocket call backs
 - Session management and message handling triggered by the call backs
 
+Printscreen of two browsers (sessions) seeing the same messages simultaneously, and one message seen only on the session which declared it private.
+![alt text](websocketdemo.png)
+
 Niklaus Aeschbacher (com.nras.*)
