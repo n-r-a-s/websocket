@@ -1,0 +1,67 @@
+<!--
+
+ Copyright (C) 2023 Niklaus Aeschbacher (com.nras)
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<!--
+ Adapted from 
+ Java EE 7: Building Web Applications with WebSocket, JavaScript and HTML5 
+ https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/HomeWebsocket/WebsocketHome.html
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <script src="script/websocket.js"></script>
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <h1>Java Websocket Home</h1>
+            <p>Welcome to the Java WebSocket Home. Click the Add a device button to start adding devices.</p>
+            <br />
+            <div id="addDevice">
+                <div class="button"> <a href="#" OnClick="showForm()">Add a device</a> </div>
+                <form id="addDeviceForm">
+                    <h3>Add a new device</h3>
+                    <span>Name: <input type="text" name="device_name" id="device_name"></span>
+                    <span>Type: 
+                        <select id="device_type">
+                            <option name="type" value="Appliance">Appliance</option>
+                            <option name="type" value="Electronics">Electronics</option>
+                            <option name="type" value="Lights">Lights</option>
+                            <option name="type" value="Other">Other</option>
+                        </select></span>
+
+                    <span>Description:<br />
+                        <textarea name="description" id="device_description" rows="2" cols="50"></textarea>
+                    </span>
+
+                    <input type="button" class="button" value="Add" onclick=formSubmit()>
+                    <input type="reset" class="button" value="Cancel" onclick=hideForm()>
+                </form>
+            </div>
+            <br />
+            <h3>Currently connected devices:</h3>
+            <div id="content">
+            </div>
+        </div>
+
+    </body>
+</html>
