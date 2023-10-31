@@ -1,4 +1,4 @@
-# WebSocket Example for Apache Tomcat
+# Java WebSocket Example for Apache Tomcat
 
 This contribution may be useful for any one who likes tho implement a simple WebSocket Server/Client for the use with Apache Tomcat for education purposes or further development.
 
