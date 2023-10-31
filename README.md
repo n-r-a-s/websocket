@@ -1,5 +1,12 @@
-# Welcome to GitHub Desktop!
+# WebSocket Example integrated on Apache Tomcat
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+Implements server and a client communicating over the WebSocket protocol. The following features are demonstrated:
+- Message created in one session seen on all other sessions
+- Message removal on all sessions
+- Message added and removed for specific sessions
 
-Niklaus Aeschbacher
+This is an adaption from the Oracle tutorial:
+Java EE 7: Building Web Applications with WebSocket, JavaScript and HTML5 
+https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/HomeWebsocket/WebsocketHome.html
+
+Niklaus Aeschbacher (com.nras.*)
