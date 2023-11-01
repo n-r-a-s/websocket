@@ -8,7 +8,7 @@ Implements server/client communication over the WebSocket protocol for the integ
 - Message propagated or supressed on specific sessions
 
 This is an adaption from the Oracle tutorial with the following modifications:
-- Edited for deployment on Apache Tomcat instead of Glassfish
+- Edited for deployment on Apache Tomcat (instead of Glassfish)
 - Generalized message model
 - Message propagation for specific session
 
