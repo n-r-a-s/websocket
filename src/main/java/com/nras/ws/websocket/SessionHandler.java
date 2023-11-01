@@ -236,9 +236,51 @@ public class SessionHandler {
         }
     }
 
-    private void sendToSession(Session session, JSONObject message) {
+    private void sendToSession(Session session, Message msg) throws JSONException {
         try {
-            session.getBasicRemote().sendText(message.toString());
+
+            if (session.getUserProperties().containsKey(msg.getId().toString())) {
+
+                switch (msg.getAction()) {
+                    // ADD: no action, message already exists in session
+                    case ADD:
+                        break;
+                    // UPDATE: send update
+                    case UPDATE:
+                        session.getBasicRemote().sendText(msg.toString());
+                        break;
+                    // REMOVE: send remove and remove from properties
+                    case REMOVE:
+                        session.getUserProperties().remove(msg.getId().toString());
+                        session.getBasicRemote().sendText(msg.toString());
+                        break;
+                    default:
+                        // throw not supported error
+                        break;
+                }
+
+            } else {
+
+                switch (msg.getAction()) {
+                    // ADD: send add and put to properties
+                    case ADD:
+                        session.getUserProperties().put(msg.getId().toString(), msg);
+                        session.getBasicRemote().sendText(msg.toString());
+                        break;
+                    // UPDATE: integrity violation: an update canot be sent to a message 
+                    // that does not exist in properties - that has never send before
+                    // do nothing or throw exception
+                    // REMOVE: same as update 
+                    case UPDATE:
+                    case REMOVE:
+                        break;
+                    default:
+                        // throw not supported error
+                        break;
+                }
+
+            }
+
         } catch (IOException ex) {
             sessionSet.remove(session);
             Logger.getLogger(SessionHandler.class.getName()).log(Level.SEVERE, null, ex);
