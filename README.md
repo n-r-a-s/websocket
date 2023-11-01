@@ -5,7 +5,7 @@ This contribution may be useful for any one who likes tho implement a simple Web
 Implements server/client communication over the WebSocket protocol for the integration into the Apache Tomcat Web Application Framework. The following features are demonstrated (full-duplex,bidirectional):
 - Message created in one session seen on all other sessions
 - Message removal on all sessions
-- Message added and removed for specific sessions
+- Message propagated or supressed for selected sessions
 
 This is an adaption from the Oracle tutorial with the following modifications:
 - Edited for deployment on Apache Tomcat instead of Glassfish
