@@ -24,4 +24,12 @@ The source code includes
 Printscreen of two browsers (sessions) seeing the same messages simultaneously, and one message seen only on the session which declared it private.
 ![alt text](websocketdemo.png)
 
+Set up the project in your environment:
+1. Install Apache Tomcat
+2. Add a new Java Web Jakarta EE 11 project in your IDE
+3. Change the context path /402_NRAS_WS suitable for your environment/project
+4. Pull or donwload the files from this repository
+5. Change the context path in the websocket.js WebSocket initialization call
+6. Dowload the declared dependencies (see pom.xml), JSON jar must be downloaded manually in some cases 
+
 Niklaus Aeschbacher (com.nras.*)
